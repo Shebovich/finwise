@@ -3,6 +3,7 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
+    alias(libs.plugins.moko.resources)
 }
 
 kotlin {
@@ -19,17 +20,26 @@ kotlin {
         iosTarget.binaries.framework {
             baseName = "Shared"
             isStatic = true
+            export(libs.moko.resources)
+            export(libs.moko.resources.compose)
         }
     }
     
     sourceSets {
         commonMain.dependencies {
-            // put your Multiplatform dependencies here
+            api(libs.moko.resources)
+            api(libs.moko.resources.compose)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
         }
     }
+}
+
+multiplatformResources {
+    resourcesPackage = "com.example.myfirstkmp.shared"
+    resourcesClassName = "MR"
+    iosBaseLocalizationRegion = "en"
 }
 
 android {
@@ -43,3 +53,4 @@ android {
         minSdk = libs.versions.android.minSdk.get().toInt()
     }
 }
+

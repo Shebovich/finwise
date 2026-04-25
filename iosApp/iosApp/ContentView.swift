@@ -4,26 +4,17 @@ import Shared
 struct ContentView: View {
     @State private var showContent = false
     var body: some View {
-        VStack {
+        VStack(spacing: 0) {
+            Image(uiImage: MR.images().splash.toUIImage()!)
+                .resizable()
+                .frame(width: 109, height: 115)
 
-            Button("Click me!") {
-                withAnimation {
-                    showContent = !showContent
-                }
-            }
-
-            if showContent {
-                VStack(spacing: 16) {
-                    Image(systemName: "swift")
-                        .font(.system(size: 200))
-                        .foregroundColor(.accentColor)
-                    Text("SwiftUI: \(Greeting().greet())")
-                }
-                .transition(.move(edge: .top).combined(with: .opacity))
-            }
+            Text(MR.strings().finwise.desc().localized())
+                .font(Font(resource: \.poppins_semibold, withSize: 52.0))
+                .foregroundColor(.white)
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
-        .padding()
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+        .background(AppColors.mainGreen)
     }
 }
 
