@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">My KMM App</string>
+    <string name="hello_world">Hello World!</string>
+    <string name="button_ok">OK</string>
+    <string name="button_cancel">Cancel</string>
+    <string name="finwise">FinWise</string>
+</resources>

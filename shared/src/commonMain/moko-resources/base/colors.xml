@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="darkModeGreenBlack">#031314</color>
+    <color name="backgroundDarkAndLetters">#052224</color>
+    <color name="lettersAndIcons">#093030</color>
+    <color name="darkModeGreenBar">#0E3E3E</color>
+    <color name="mainGreen">#00D09E</color>
+    <color name="lightGreen">#DFF7E2</color>
+    <color name="lightBlueButton">#6DB6FE</color>
+    <color name="oceanBlueButton">#0068FF</color>
+</resources>
